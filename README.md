@@ -70,7 +70,6 @@
 ## 转码
 
 ![转码](docs/images/转码.png)
-![转码参数](docs/images/参数.png)
 ![LUT还原](docs/images/LUT还原.png)
 
 基于随包 FFmpeg / ffprobe 构建。
