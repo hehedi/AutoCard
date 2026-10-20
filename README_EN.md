@@ -1,80 +1,67 @@
-# One-Click Card Import
+[English](README_EN.md) | [Chinese](README.md)
+
+# One-Click Card Import AutoSD / One-Click Playback AutoPlay
 
 **A media import and processing tool for photography, videography, and post-production workflows.**
+**Comes with a highly professional and efficient player**
 
-**The software ships with English and makes it easy to add multiple languages—simply place the language files into the language folder inside the software.**
+**The software includes English and makes it easy to add multiple languages; simply place a language file into the software's language folder**
 
-One-Click Card Import was originally built to solve the problem of organizing, copying, and archiving media from storage cards after a shoot. Through continuous development, it has grown into a workflow tool that integrates **device recognition, media ingest, verification and backup, task management, transcoding, media browsing, on-site automatic ingest, and LAN collaboration**.
+One-Click Card Import was initially created to solve the problem of organizing, copying, and archiving footage from storage cards after shooting. Through continuous development, it has now become a tool that integrates **device identification, verified backup, multi-tasking, transcoding, media browsing, and professional playback**.
 
 ---
 
 ## Core Features
 
-### Ingest
+### Card Import
 
 ![Main interface](docs/images/主界面.png)
 
-A media ingest workflow designed for camera cards and audio recorder cards.
+A media import workflow designed for camera cards and recorder cards.
 
-* Automatically recognizes vendor, model, serial number, and camera position
-* Supports video, photos, RAW, audio, and sidecar files
-* Supports import modes such as video + photos / video only / photos only
-* Supports incremental import and duplicate media detection
-* Supports resume from interruption
-* Supports recovery of unfinished tasks
-* Supports multi-target export and backup
-* Supports mixed-card detection and archiving by camera model
-* Supports archiving metadata such as project name, camera position, and card number
+* Automatically identify manufacturer, model, serial number, and camera position
+* Support media files, video-only, photos, audio, and full-disk import modes
+* Support incremental import and duplicate media detection
+* Support resumable transfers and recovery of unfinished tasks
+* Support multiple destination export and backup
+* Support mixed-card identification and archiving by camera model
+* Support archiving information such as project name, camera position number, and card number
 
 ### Media Safety
 
 ![Completion interface](docs/images/完成界面.png)
 
-The ingest process is designed around the principles of **verifiable media and no accidental deletion of source files**.
+The card import process is designed around "**media can be confirmed, source files are not accidentally deleted**" as much as possible.
 
-* Checks target disk space before import
-* File import verification
-* Duplicate media detection
-* Resume from interruption
-* Pre-deletion precheck
-* Safe deletion
-* Automatically keeps source media when target files are abnormal
-* Provides detailed reasons for import failures
-* Generates export records after import completes
+* Check destination disk space before import
+* File import verification and duplicate media detection
+* Pre-check before deletion, with multiple verification modes
+* Automatically retain source media when destination files are abnormal
+* Provide detailed reasons when import fails
+* Generate export records after import completes
 
-Duplicate detection uses information such as file name, size, and fast hash; stricter content verification can be used for safe deletion.
+Duplicate detection uses information such as file name, size, and quick hash; stricter content verification can be used when performing safe deletion.
 
-### Camera Recognition
+### Camera Identification
 
-Determines device models by combining multiple pieces of media evidence, including:
+Determine device models through comprehensive evidence from multiple media sources.
 
-* Camera directory structure
-* Video / clip metadata
-* EXIF / XMP
-* Vendor and model fingerprints
-* Media capture time
-* Camera serial number
+For storage cards that have not been reformatted and have been used with different cameras successively, mixed-card identification and model arbitration are also supported, and media is archived according to the identification result.
 
-For storage cards that have not been reformatted and have been used with different cameras, it also supports mixed-card detection and model arbitration, and archives media according to the recognition result.
-
-Unknown devices will not be forced into an incorrect model; when identification cannot be confirmed, the original information is preserved as much as possible.
+Unknown devices will not be forcibly matched to an incorrect model; when identification cannot be confirmed, original information is retained as much as possible.
 
 ---
 
-## Task Queue
+## Multi-Task Queue
 
-Ingest and transcoding tasks are unified in the task queue.
+Card import and transcoding tasks all enter the task queue.
 
 Supports:
-
-* Multiple parallel tasks
+* Parallel multi-tasking
 * Concurrency control
-* Queue scheduling
-* Retry on failure
-* Resume from interruption
-* Task recovery after app restart
-* Task completion summaries
-* Windows system notifications
+* Queued scheduling
+* Task recovery after program restart
+* Task completion summary
 * LAN task status viewing
 
 ---
@@ -82,64 +69,39 @@ Supports:
 ## Transcoding
 
 ![Transcoding](docs/images/转码.png)
-![Transcoding parameters](docs/images/参数.png)
-![LUT restoration](docs/images/LUT还原.png)
+![LUT Restoration](docs/images/LUT还原.png)
 
-Built on the bundled FFmpeg / ffprobe.
+Built on bundled FFmpeg / ffprobe.
 
 Supports:
 
-* H.264 / H.265 / VP9 / AV1 and other codecs
-* Hardware-accelerated encoding
-* Resolution / frame rate adjustment
-* Follow source
-* CRF / CQ quality modes
-* Two-pass encoding
+* H.264 / H.265 / H.266 / VP9 / AV1 and other encodings
+* Hardware encoding acceleration
+* Basic encoding adjustment options
 * HDR → SDR
 * Color space conversion
 * Audio loudness normalization
 * LUT restoration
 * Custom FFmpeg parameters
-* Batch transcoding
 * Custom presets
-* File-level resume
 
 ![Transcoding details](docs/images/转码详情.png)
 
-It also provides a proxy workflow:
+Also provides a proxy workflow:
 
-* Automatically generates a Proxy folder
-* Associates proxy files with source media
-* Automatically generates CSV / EDL / XML manifests
-
-This makes it easy to continue working in post-production software such as Premiere Pro and DaVinci Resolve.
+* Automatically generate Proxy folders
+* Associate proxy files with original media
 
 ---
 
-## Media Browser
+## Media Browser / One-Click Playback AutoPlay
 
 ![Media browser details](docs/images/素材浏览器详情.png)
 
-After inserting a storage card, you can browse the media on the card directly.
+After inserting a storage card, you can directly browse the media on the card.
 
-Supports:
-
-* Video / photo / audio filtering
-* Search by file name, path, date, camera, type, and extension
-* Sort by file name, capture time, size, duration, and type
-* Thumbnail browsing
-* Multi-select and batch transcoding
-* Source file deletion
-* Detailed media information
-* Refresh card files
-
-Media details display different information depending on the media type.
-
-For video, you can view duration, resolution, frame rate, bit rate, codec, color, bit depth, and more;
-
-For photos, EXIF / TIFF information is supported, including RAW media;
-
-For audio, duration, bit rate, codec, sample rate, bit depth, and more are supported.
+**Comes with a professional player**
+**For more detailed features, please visit [bilibili]: https://www.bilibili.com/opus/1261109162464509972**
 
 ---
 
@@ -147,39 +109,11 @@ For audio, duration, bit rate, codec, sample rate, bit depth, and more are suppo
 
 ![Media browser quick preview](docs/images/素材浏览器快速预览.png)
 
-The Media Browser provides a quick way to review and cull footage on site:
+The media browser provides a quick browsing method for on-site shot selection:
 
 **Move the mouse over a media card → hold Space**
 
 to preview quickly.
-
-Supports:
-
-* Video playback
-* Video seeking
-* Audio playback
-* Image zoom
-* Image panning
-* RAW media browsing
-
-Video preview uses the bundled FFmpeg for decoding to improve compatibility with professional video formats.
-
----
-
-## LAN Tasks
-
-![LAN task details](docs/images/局域网任务详情.png)
-
-Multiple computers on the same LAN can view each other's task status.
-
-Can share:
-
-* Details of ongoing tasks
-* Project names
-
-Remote tasks are displayed in read-only form; they do not directly control tasks on other computers or directly access remote disks.
-
-It also provides independent controls for LAN broadcast, detail viewing, and project name sync.
 
 ---
 
@@ -187,23 +121,23 @@ It also provides independent controls for LAN broadcast, detail viewing, and pro
 
 ![Toolbox interface](docs/images/工具箱界面.png)
 
-The Toolbox uses a modular design.
+The toolbox uses a modular design.
 
-Tools are loaded as independent modules, so tools can be added or removed without affecting the core functionality of the main application.
+Tools are loaded as independent modules and can be added or removed without affecting the core functions of the main program.
 
-Currently available:
+Currently provides:
 
-### Online Ingest
+### Online Import
 
-![Online Ingest](docs/images/在线导入.png)
+![Online Import](docs/images/在线导入.png)
 
-Used for automatic card ingest on set.
+Used for automatic card import on set.
 
 ### Quick Format Conversion
 
 Used to quickly convert image, audio, and video formats.
 
-It provides target formats based on media type, along with batch processing, frame extraction, audio extraction, and more.
+Supports corresponding target formats based on media type, and provides batch processing, frame extraction, audio extraction, and other functions.
 
 ---
 
@@ -213,12 +147,12 @@ It provides target formats based on media type, along with batch processing, fra
 
 The software records major business operations, including:
 
-* Ingest
-* Ingest history
+* Import
+* Import history
 * Transcoding
 * Deletion
-* Delete transcoded source media
-* Ingest failures
+* Deletion of original media after transcoding
+* Import failure
 * Related operation results
 
 Logs support:
@@ -230,63 +164,32 @@ Logs support:
 * Custom log directory
 * Network shared log directory
 
-After each ingest completes, the following file is also maintained in the project directory:
+After each card import completes, the following is also maintained in the project directory:
 
 ```text
 [日期][项目名]_导出详情.xlsx
 ```
 
-It records information such as project, date, export time, camera, camera position, card number, media count, total size, target location, and file status.
-
----
-
-## Workflow
-
-One-Click Card Import aims to cover more than just the "copy files" step; it covers the complete media pre-processing workflow:
-
-```text
-Storage Card
-  ↓
-Device Recognition
-  ↓
-Media Scan
-  ↓
-Ingest & Archive
-  ↓
-Verify / Backup
-  ↓
-Transcode / Proxy
-  ↓
-Media Browsing
-  ↓
-Task Management
-  ↓
-Logs & Export Records
-```
-
-The core goal is to reduce repetitive operations and minimize human error on set and during media archiving.
+Used to record information such as project, date, export time, camera, camera position, card number, number of media files, total capacity, destination location, and file status.
 
 ---
 
 ## Performance and Reliability
 
-The software is specifically designed for large amounts of media, long-running tasks, and abnormal interruptions.
+The software has been specifically designed for large amounts of media, long-running tasks, and abnormal interruptions.
 
-This includes:
+Includes:
 
-* Large-directory virtualization
-* Viewport-based thumbnail loading
-* Thumbnail caching
-* Background media scanning
-* Background metadata reading
+* Large directory virtualization
+* Thumbnail loading and caching based on viewport
+* Background media scanning and metadata reading
 * Task state persistence
-* Atomic writes and backup recovery
-* Ingest resume
-* Transcode resume
+* Atomic disk writes and backup recovery
+* Resumable transfers
 * Task recovery after abnormal exit
 * Separation of technical logs and business logs
 
-In practical testing, the UI remains responsive even with large numbers of media files present.
+In actual tests, the interface remains interactive even when a large amount of media is present at the same time.
 
 ---
 
@@ -296,9 +199,10 @@ Go to GitHub Releases to get the latest version:
 
 [Releases](../../releases)
 
-Currently, the **Windows version** is primarily provided.
+Currently mainly provides the **Windows version**.
+**The Linux version has been developed and runs normally, and is undergoing reliability testing**
 
-This project is currently **closed-source software** and its source code is not publicly available for now.
+This project is currently **closed-source software**, and the source code is not publicly available.
 
 ---
 
@@ -307,7 +211,7 @@ This project is currently **closed-source software** and its source code is not 
 The software currently targets the Windows desktop environment.
 However, Mac and Linux versions are also within the development scope.
 
-Some system runtime components are provided with the package. If the installer detects that the computer does not have these components, it will install them automatically.
+Some system runtime components are provided with the program package. During installation, if it detects that the computer does not have these components, it will automatically install them.
 
 ---
 
@@ -315,60 +219,35 @@ Some system runtime components are provided with the package. If the installer d
 
 ### One-Click Card Import
 
-One-Click Card Import itself is **proprietary software**.
+One-Click Card Import itself is **Proprietary Software**.
 
 ```text
 Copyright © 2026 hehedi. All Rights Reserved.
 ```
 
-Except for the rights of use expressly granted by this project, all copyrights and other intellectual property rights are reserved.
+Except for the usage rights explicitly granted by this project, all copyrights and other intellectual property rights are reserved.
 
-Without prior written permission from the copyright owner, you may not:
+Without the written permission of the copyright owner, you may not:
 
-* Copy or redistribute this software
+* Copy or re-publish this software
 * Modify or create derivative versions
 * Decompile, disassemble, or attempt to obtain the source code
 * Remove or modify copyright and rights notices
 * Repackage this software as another product for distribution
 * Sell, rent, sublicense, or provide unauthorized commercial redistribution
 
-For the complete license terms, see:
+For the complete license terms, please refer to:
 
 [`LICENSE`](LICENSE)
 
 ---
 
-## Third-Party Components
-
-One-Click Card Import uses several third-party open-source components.
-
-These components **are not part of this project's closed-source portion**, and their use and redistribution remain subject to their respective licenses.
-
-Major components include:
-
-| Component/resource | Purpose and notes |
-| --- | --- |
-| Avalonia | Current desktop UI framework |
-| FFmpeg / ffprobe | Media probing, previews and transcoding; the applicable license depends on the bundled build |
-| MiSans | Interface typography and PDF glyph rendering, subject to its font license |
-| PDFsharp | PDF export, under the MIT license |
-
-> Note: The licenses of third-party components are independent of the proprietary software license of One-Click Card Import itself.
-
----
-
 ## Disclaimer
 
-This software is intended to assist with importing, organizing, and processing photo and video media.
-
-Although the software includes safeguards for ingest verification, exception recovery, safe deletion, and similar scenarios, any storage device, operating system, file system, USB interface, or third-party media component may encounter unforeseen issues.
-
-For important footage, always keep an independent backup and verify that the backup is complete before deleting the original media.
-
-Do not upload files that contain personal privacy, project privacy, or unreleased footage.
-
----
+This software is used to assist with the import, organization, and processing of photography and videography media.
+Although the software has designed corresponding protection mechanisms for import verification, abnormal recovery, safe deletion, and other situations, any storage device, operating system, file system, USB interface, and third-party media components may encounter unforeseen problems.
+For important footage, it is recommended to always keep an independent backup and delete the original media only after confirming that the backup is complete.
+Please do not upload files containing personal privacy, project privacy, or unreleased footage.
 
 Designed by **hehedi**
-
 Copyright © 2026 hehedi. All Rights Reserved.
