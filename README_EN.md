@@ -1,253 +1,90 @@
-[English](README_EN.md) | [Chinese](README.md)
+[简体中文](README.md) | [English](README_EN.md)
 
-# One-Click Card Import AutoSD / One-Click Playback AutoPlay
+# AutoSD · AutoPlay
 
-**A media import and processing tool for photography, videography, and post-production workflows.**
-**Comes with a highly professional and efficient player**
+**From media offload and verified backups to transcoding, review, and playback.**
 
-**The software includes English and makes it easy to add multiple languages; simply place a language file into the software's language folder**
+[Download the latest release](../../releases) · [AutoPlay overview (Chinese)](https://www.bilibili.com/opus/1261109162464509972) · [License](LICENSE)
 
-One-Click Card Import was initially created to solve the problem of organizing, copying, and archiving footage from storage cards after shooting. Through continuous development, it has now become a tool that integrates **device identification, verified backup, multi-tasking, transcoding, media browsing, and professional playback**.
+Free to use · Windows / Linux · macOS support in development · Chinese / English
 
----
+## AutoSD
 
-## Core Features
+| Feature | What it does |
+| --- | --- |
+| **Offload & organize** | Identify devices and media from multiple cameras on one card; import by media type or copy the full card; organize by project, camera position, and card ID. |
+| **Verification & backup** | Multiple backup destinations, incremental imports, duplicate detection, and disk-space checks; import verification, pre-deletion checks, and selectable verification modes. Retain source media if destination files have issues. |
+| **Task management** | A shared queue for offload and transcoding jobs, with concurrency control, resumable transfers, task recovery after a restart, and task status viewing over the LAN. |
+| **Transcoding & proxies** | Hardware acceleration, HDR → SDR, color conversion, LUT application, and loudness normalization; custom presets and parameters; automatic proxy generation and linking. |
+| **Toolbox** | On-set automatic imports, batch image/audio/video conversion, frame extraction, and audio extraction; modular tool extensions. |
+| **Logs & reports** | Search, filter, and inspect operation logs; choose a custom or network log folder; automatically generate an Excel report after each offload. |
 
-### Card Import
+Transcoding uses the bundled FFmpeg / ffprobe, with encoding options including H.264 / H.265 / H.266 / VP9 / AV1.
 
-![Main interface](docs/images/主界面.png)
+![AutoSD main interface](docs/images/主界面.png)
 
-A media import workflow designed for camera cards and recorder cards.
+## AutoPlay
 
-* Automatically identify manufacturer, model, serial number, and camera position
-* Support media files, video-only, photos, audio, and full-disk import modes
-* Support incremental import and duplicate media detection
-* Support resumable transfers and recovery of unfinished tasks
-* Support multiple destination export and backup
-* Support mixed-card identification and archiving by camera model
-* Support archiving information such as project name, camera position number, and card number
+Bundled with AutoSD and can be launched separately for footage review and everyday media playback.
 
-### Media Safety
+- **Multi-format playback**: Video, audio, images, and camera RAW, with support for DSD, embedded/external subtitles, and exclusive audio device access.
+- **Frame-by-frame review**: Frame stepping, precise time entry, timecode, frame capture, and markers; zoom, pan, reduced-resolution playback, and dropped-frame diagnostics.
+- **Video and audio analysis**: Luminance waveforms, histograms, white balance analysis, audio waveforms, and spectrum views; video scopes can be overlaid on the image.
+- **A/B comparison**: Dual-view, single-view, and difference modes, with separate or linked playback, drag-and-drop media replacement, and captured-frame comparison.
+- **Display and color controls**: Apply and compare custom LUTs, adjust HDR brightness and SDR luminance mapping, and choose whether picture cropping also affects subtitles.
 
-![Completion interface](docs/images/完成界面.png)
+**Quick preview from your memory card**: In AutoSD's media browser, hover over a media thumbnail, **hold Space to preview, and release to close**.
 
-The card import process is designed around "**media can be confirmed, source files are not accidentally deleted**" as much as possible.
+[Full AutoPlay overview and demos (Chinese) →](https://www.bilibili.com/opus/1261109162464509972)
 
-* Check destination disk space before import
-* File import verification and duplicate media detection
-* Pre-check before deletion, with multiple verification modes
-* Automatically retain source media when destination files are abnormal
-* Provide detailed reasons when import fails
-* Generate export records after import completes
+## More screenshots
 
-Duplicate detection uses information such as file name, size, and quick hash; stricter content verification can be used when performing safe deletion.
+<details>
+<summary>Completed offloads & logs</summary>
 
-### Camera Identification
+![Offload completion screen](docs/images/完成界面.png)
 
-Determine device models through comprehensive evidence from multiple media sources.
+![Operation logs](docs/images/日志.png)
 
-For storage cards that have not been reformatted and have been used with different cameras successively, mixed-card identification and model arbitration are also supported, and media is archived according to the identification result.
+After each offload, the project folder contains an Excel report named `[日期][项目名]_导出详情.xlsx` (date + project name + export details). It records camera positions, card IDs, media counts, total size, destination paths, file status, and other details.
 
-Unknown devices will not be forcibly matched to an incorrect model; when identification cannot be confirmed, original information is retained as much as possible.
+</details>
 
----
-
-## Multi-Task Queue
-
-Card import and transcoding tasks all enter the task queue.
-
-Supports:
-* Parallel multi-tasking
-* Concurrency control
-* Queued scheduling
-* Task recovery after program restart
-* Task completion summary
-* LAN task status viewing
-
----
-
-## Transcoding
+<details>
+<summary>Transcoding, LUTs & task details</summary>
 
 ![Transcoding](docs/images/转码.png)
-![LUT Restoration](docs/images/LUT还原.png)
 
-Built on bundled FFmpeg / ffprobe.
+![LUT application](docs/images/LUT还原.png)
 
-Supports:
+![Transcoding task details](docs/images/转码详情.png)
 
-* H.264 / H.265 / H.266 / VP9 / AV1 and other encodings
-* Hardware encoding acceleration
-* Basic encoding adjustment options
-* HDR → SDR
-* Color space conversion
-* Audio loudness normalization
-* LUT restoration
-* Custom FFmpeg parameters
-* Custom presets
+</details>
 
-![Transcoding details](docs/images/转码详情.png)
-
-Also provides a proxy workflow:
-
-* Automatically generate Proxy folders
-* Associate proxy files with original media
-
----
-
-## Media Browser / One-Click Playback AutoPlay
+<details>
+<summary>Media browser & quick preview</summary>
 
 ![Media browser details](docs/images/素材浏览器详情.png)
 
-After inserting a storage card, you can directly browse the media on the card.
-
-**Comes with a professional player**
-**For more detailed features, please visit [bilibili]: https://www.bilibili.com/opus/1261109162464509972**
-
----
-
-## Quick Preview
-
 ![Media browser quick preview](docs/images/素材浏览器快速预览.png)
 
-The media browser provides a quick browsing method for on-site shot selection:
+</details>
 
-**Move the mouse over a media card → hold Space**
+<details>
+<summary>Toolbox & automatic imports</summary>
 
-to preview quickly.
+![Toolbox](docs/images/工具箱界面.png)
 
----
+![Automatic imports](docs/images/在线导入.png)
 
-## Toolbox
+</details>
 
-![Toolbox interface](docs/images/工具箱界面.png)
+## Languages & license
 
-The toolbox uses a modular design.
+Chinese and English are included. Add language files to the application's `language` folder to support additional languages.
 
-Tools are loaded as independent modules and can be added or removed without affecting the core functions of the main program.
+This is **proprietary software**; its source code is not publicly available. See [`LICENSE`](LICENSE) for usage and distribution restrictions.
 
-Currently provides:
+> Keep independent backups of important media, and verify that your backups are complete before deleting the originals.
 
-### Online Import
-
-![Online Import](docs/images/在线导入.png)
-
-Used for automatic card import on set.
-
-### Quick Format Conversion
-
-Used to quickly convert image, audio, and video formats.
-
-Supports corresponding target formats based on media type, and provides batch processing, frame extraction, audio extraction, and other functions.
-
----
-
-## Logs and Archiving
-
-![Logs](docs/images/日志.png)
-
-The software records major business operations, including:
-
-* Import
-* Import history
-* Transcoding
-* Deletion
-* Deletion of original media after transcoding
-* Import failure
-* Related operation results
-
-Logs support:
-
-* Search
-* Filtering
-* Pagination
-* Detail viewing
-* Custom log directory
-* Network shared log directory
-
-After each card import completes, the following is also maintained in the project directory:
-
-```text
-[日期][项目名]_导出详情.xlsx
-```
-
-Used to record information such as project, date, export time, camera, camera position, card number, number of media files, total capacity, destination location, and file status.
-
----
-
-## Performance and Reliability
-
-The software has been specifically designed for large amounts of media, long-running tasks, and abnormal interruptions.
-
-Includes:
-
-* Large directory virtualization
-* Thumbnail loading and caching based on viewport
-* Background media scanning and metadata reading
-* Task state persistence
-* Atomic disk writes and backup recovery
-* Resumable transfers
-* Task recovery after abnormal exit
-* Separation of technical logs and business logs
-
-In actual tests, the interface remains interactive even when a large amount of media is present at the same time.
-
----
-
-## Download
-
-Go to GitHub Releases to get the latest version:
-
-[Releases](../../releases)
-
-Currently mainly provides the **Windows version**.
-**The Linux version has been developed and runs normally, and is undergoing reliability testing**
-
-This project is currently **closed-source software**, and the source code is not publicly available.
-
----
-
-## System Requirements
-
-The software currently targets the Windows desktop environment.
-However, Mac and Linux versions are also within the development scope.
-
-Some system runtime components are provided with the program package. During installation, if it detects that the computer does not have these components, it will automatically install them.
-
----
-
-## License
-
-### One-Click Card Import
-
-One-Click Card Import itself is **Proprietary Software**.
-
-```text
-Copyright © 2026 hehedi. All Rights Reserved.
-```
-
-Except for the usage rights explicitly granted by this project, all copyrights and other intellectual property rights are reserved.
-
-Without the written permission of the copyright owner, you may not:
-
-* Copy or re-publish this software
-* Modify or create derivative versions
-* Decompile, disassemble, or attempt to obtain the source code
-* Remove or modify copyright and rights notices
-* Repackage this software as another product for distribution
-* Sell, rent, sublicense, or provide unauthorized commercial redistribution
-
-For the complete license terms, please refer to:
-
-[`LICENSE`](LICENSE)
-
----
-
-## Disclaimer
-
-This software is used to assist with the import, organization, and processing of photography and videography media.
-Although the software has designed corresponding protection mechanisms for import verification, abnormal recovery, safe deletion, and other situations, any storage device, operating system, file system, USB interface, and third-party media components may encounter unforeseen problems.
-For important footage, it is recommended to always keep an independent backup and delete the original media only after confirming that the backup is complete.
-Please do not upload files containing personal privacy, project privacy, or unreleased footage.
-
-Designed by **hehedi**
-Copyright © 2026 hehedi. All Rights Reserved.
+Copyright © 2026 **hehedi**. All Rights Reserved.
