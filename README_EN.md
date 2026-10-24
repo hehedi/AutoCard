@@ -1,6 +1,6 @@
 [简体中文](README.md) | [English](README_EN.md)
 
-# AutoSD · AutoPlay
+# AutoCard · AutoPlay
 
 **From media offload and verified backups to transcoding, review, and playback.**
 
@@ -8,7 +8,7 @@
 
 Free to use · Windows / Linux · macOS support in development · Chinese / English
 
-## AutoSD
+## AutoCard
 
 | Feature | What it does |
 | --- | --- |
@@ -25,7 +25,7 @@ Transcoding uses the bundled FFmpeg / ffprobe, with encoding options including H
 
 ## AutoPlay
 
-Bundled with AutoSD and can be launched separately for footage review and everyday media playback.
+Bundled with AutoCard and can be launched separately for footage review and everyday media playback.
 
 - **Multi-format playback**: Video, audio, images, and camera RAW, with support for DSD, embedded/external subtitles, and exclusive audio device access.
 - **Frame-by-frame review**: Frame stepping, precise time entry, timecode, frame capture, and markers; zoom, pan, reduced-resolution playback, and dropped-frame diagnostics.
