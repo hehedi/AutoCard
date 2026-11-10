@@ -1,90 +1,93 @@
 [简体中文](README.md) | [English](README_EN.md)
 
-# AutoCard · AutoPlay
+# AutoCard
 
-**From media offload and verified backups to transcoding, review, and playback.**
+**Import, verify, back up, transcode, and review your media—from memory card to organized project archive.**
 
-[Download the latest release](../../releases) · [AutoPlay overview (Chinese)](https://www.bilibili.com/opus/1261109162464509972) · [License](LICENSE)
+[Download the Latest Release](../../releases) · [AutoPlay](https://github.com/hehedi/AutoPlay) · [AutoLibrary](https://github.com/hehedi/AutoLibrary) · [License](LICENSE)
 
-Free to use · Windows / Linux · macOS support in development · Chinese / English
+Free to use · Works offline · Windows / Linux · Chinese / English
 
-## AutoCard
+AutoCard is designed for video production, photography, and audio recording workflows. It identifies media on storage devices, organizes files by date, project, camera, and card number, backs up to multiple destinations, and keeps verification results and task reports.
 
-| Feature | What it does |
+![AutoCard main window](docs/images/主界面.png)
+
+## Key Features
+
+| Feature | Description |
 | --- | --- |
-| **Offload & organize** | Identify devices and media from multiple cameras on one card; import by media type or copy the full card; organize by project, camera position, and card ID. |
-| **Verification & backup** | Multiple backup destinations, incremental imports, duplicate detection, and disk-space checks; import verification, pre-deletion checks, and selectable verification modes. Retain source media if destination files have issues. |
-| **Task management** | A shared queue for offload and transcoding jobs, with concurrency control, resumable transfers, task recovery after a restart, and task status viewing over the LAN. |
-| **Transcoding & proxies** | Hardware acceleration, HDR → SDR, color conversion, LUT application, and loudness normalization; custom presets and parameters; automatic proxy generation and linking. |
-| **Toolbox** | On-set automatic imports, batch image/audio/video conversion, frame extraction, and audio extraction; modular tool extensions. |
-| **Logs & reports** | Search, filter, and inspect operation logs; choose a custom or network log folder; automatically generate an Excel report after each offload. |
+| **Card Offloading & Organization** | Identifies cameras and storage devices, and recognizes cards containing media from multiple sources. Import selected media types or all files on a device, organized by date, project, camera, and card number. |
+| **Verification & Backup** | Supports multiple backup destinations, incremental imports, duplicate checks, and available-space checks. Verifies file contents with xxHash (default), MD5, or SHA-256, and performs additional checks before deleting source files after offloading. If a check finds an issue, the affected source files are retained and the reason is shown. |
+| **Task Management** | Manage offload and transcoding tasks in one queue, with concurrency controls, pause and retry, resumable offloads, and recovery of eligible transcoding tasks. View task status across the same local network. |
+| **Transcoding & Proxies** | Hardware acceleration, HDR → SDR conversion, color conversion, LUT processing, and loudness normalization. Customize presets and parameters, and generate proxy files linked to their source media. |
+| **Media Browser** | Browse, search, and filter media on a card; inspect shooting parameters and media information. Hold Space for quick previews, capture frames, and mark media items. |
+| **Toolbox** | Live ingest on set, batch conversion for images, audio, and video, frame and audio extraction, and support for modular extensions. |
+| **Logs & Reports** | Search and filter operation logs, view detailed entries, and store logs locally or on network shares. Generate PDF task reports after offloading, with media details, verification results, archive locations, and deletion records. |
 
-Transcoding uses the bundled FFmpeg / ffprobe, with encoding options including H.264 / H.265 / H.266 / VP9 / AV1.
+## Media Browser
 
-![AutoSD main interface](docs/images/主界面.png)
+Hover over an item in the media browser and hold **Space** to preview it. You can also keep the preview open, capture frames, and mark media items.
 
-## AutoPlay
+- **Professional Media Playback**: Play professional media such as MXF, ProRes, BRAW, R3D, and ARRIRAW / ARRICORE, view camera RAW photos, and inspect shooting parameters and media metadata.
+- **Frame-Accurate Review**: Step forward or backward one frame at a time, use SMPTE timecode and precise seeking, and capture frames. Choose full-resolution playback or reduced-resolution modes to inspect detail or reduce playback load.
+- **LUT & HDR Preview**: Apply LUTs to preview color transforms, with support for HDR display, brightness adaptation, and HDR → SDR mapping. Preview adjustments do not modify the source media.
+- **A/B Comparison**: Compare originals, proxies, and differently processed versions using reference images or videos, an adjustable split view, side-by-side comparison, frame alignment, and a difference view.
+- **Video & Audio Analysis**: Inspect exposure, color, and sound with a luma waveform, RGB histogram, white balance aids, and per-channel audio waveforms and spectrograms.
 
-Bundled with AutoCard and can be launched separately for footage review and everyday media playback.
+## Download & Installation
 
-- **Multi-format playback**: Video, audio, images, and camera RAW, with support for DSD, embedded/external subtitles, and exclusive audio device access.
-- **Frame-by-frame review**: Frame stepping, precise time entry, timecode, frame capture, and markers; zoom, pan, reduced-resolution playback, and dropped-frame diagnostics.
-- **Video and audio analysis**: Luminance waveforms, histograms, white balance analysis, audio waveforms, and spectrum views; video scopes can be overlaid on the image.
-- **A/B comparison**: Dual-view, single-view, and difference modes, with separate or linked playback, drag-and-drop media replacement, and captured-frame comparison.
-- **Display and color controls**: Apply and compare custom LUTs, adjust HDR brightness and SDR luminance mapping, and choose whether picture cropping also affects subtitles.
+1. Download a version from [Releases](../../releases). See its release notes for supported platforms.
+2. For the Windows installer, keep `Setup.exe` and its matching `Setup-1.bin` data file from the same release in the same folder, then run `Setup.exe`.
+3. Select AutoCard, AutoPlay, and the components you need during installation. Some professional decoders and additional features are provided as optional components. All components are free; install only what you need to save disk space.
 
-**Quick preview from your memory card**: In AutoSD's media browser, hover over a media thumbnail, **hold Space to preview, and release to close**.
-
-[Full AutoPlay overview and demos (Chinese) →](https://www.bilibili.com/opus/1261109162464509972)
-
-## More screenshots
+## More Screenshots
 
 <details>
-<summary>Completed offloads & logs</summary>
+<summary>Completed Offloads & Logs</summary>
 
 ![Offload completion screen](docs/images/完成界面.png)
 
 ![Operation logs](docs/images/日志.png)
 
-After each offload, the project folder contains an Excel report named `[日期][项目名]_导出详情.xlsx` (date + project name + export details). It records camera positions, card IDs, media counts, total size, destination paths, file status, and other details.
+After an offload, a PDF task report is generated in the project folder. It includes an import summary, media thumbnails, technical parameters, verification results, and full destination paths, and records subsequent deletion operations.
 
 </details>
 
 <details>
-<summary>Transcoding, LUTs & task details</summary>
+<summary>Transcoding, LUTs & Task Details</summary>
 
 ![Transcoding](docs/images/转码.png)
 
-![LUT application](docs/images/LUT还原.png)
+![LUT processing](docs/images/LUT还原.png)
 
 ![Transcoding task details](docs/images/转码详情.png)
 
 </details>
 
 <details>
-<summary>Media browser & quick preview</summary>
+<summary>Media Browser & Quick Preview</summary>
 
 ![Media browser details](docs/images/素材浏览器详情.png)
 
-![Media browser quick preview](docs/images/素材浏览器快速预览.png)
+![Quick preview in the media browser](docs/images/素材浏览器快速预览.png)
 
 </details>
 
 <details>
-<summary>Toolbox & automatic imports</summary>
+<summary>Toolbox & Live Ingest</summary>
 
 ![Toolbox](docs/images/工具箱界面.png)
 
-![Automatic imports](docs/images/在线导入.png)
+![Live ingest](docs/images/在线导入.png)
 
 </details>
 
-## Languages & license
+## Languages & License
 
-Chinese and English are included. Add language files to the application's `language` folder to support additional languages.
+Chinese and English are included. Add language files to the application's `language` folder to enable additional languages.
 
-This is **proprietary software**; its source code is not publicly available. See [`LICENSE`](LICENSE) for usage and distribution restrictions.
+This software is **free to use under a proprietary license; its source code is not publicly available**. See [`LICENSE`](LICENSE) for usage and distribution restrictions. Third-party license notices are available on the application's About page and in the included license files.
 
-> Keep independent backups of important media, and verify that your backups are complete before deleting the originals.
+> Keep independent backups of important media. Verify that your backups are complete before deleting the original files.
 
 Copyright © 2026 **hehedi**. All Rights Reserved.
