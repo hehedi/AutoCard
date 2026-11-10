@@ -6,7 +6,7 @@
 
 [下载最新版](../../releases) · [AutoPlay](https://github.com/hehedi/AutoPlay) · [AutoLibrary](https://github.com/hehedi/AutoLibrary) · [授权条款](LICENSE)
 
-免费使用 · 离线运行 · Windows /Liunx · 中文 / English
+免费使用 · 离线运行 · Windows / Linux · 中文 / English
 
 AutoCard 面向视频制作、摄影与录音素材管理：识别存储设备中的素材，按日期、项目、机位和卡号整理，支持同时备份到多个目标，并保留校验结果与任务报告。
 
